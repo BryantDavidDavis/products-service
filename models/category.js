@@ -1,17 +1,9 @@
-var db		  = require('../models/index');
-console.log(db);
-// var Sequelize = Sequelize;
-// var sequelize = sequelize;
+"use strict";
 
-// var Category = sequelize.define("category", {
-// 	name: Sequelize.STRING
-// });
-// Category.create({name: 'cabbage'});
-// // Category.sync({force: true}).then(function () {
-// //   // Table created
-// //   return Category.create({
-// //         name: 'cabbage'
-// // 	});
-// // });
+module.exports = function(sequelize, DataTypes) {
+	var Category = sequelize.define("category", {
+		name: DataTypes.STRING
+	});
 
-// module.exports = Category;
+	return Category;
+};
