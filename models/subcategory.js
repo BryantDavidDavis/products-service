@@ -10,6 +10,9 @@ module.exports = function(sequelize, DataTypes) {
 				Subcategory.belongsTo(models.category, {
 					onDelete: "CASCADE"
 				});
+				Subcategory.hasMany(models.product, {
+					onDelete: "CASCADE"
+				});
 			}
 		}	
 	});

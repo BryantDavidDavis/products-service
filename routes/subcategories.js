@@ -4,7 +4,13 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-	db['subcategory'].findAll().then(function(subcategories) {
+	db['subcategory'].findAll({
+    attributes: ['id', 'name'],
+    include: [{
+        model: db['category'],
+        attributes: ['name']
+    }]
+}).then(function(subcategories) {
   		res.json(subcategories);
   	});
 });

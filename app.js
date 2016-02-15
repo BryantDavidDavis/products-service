@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var models = require('./models/index');
 var routes = require('./routes/index');
 var users = require('./routes/users');
-// var products = require('./routes/products');
+var products = require('./routes/products');
 var categories = require('./routes/categories');
 var subcategories = require('./routes/subcategories');
 var app = express();
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-// app.use('/products', products);
+app.use('/products', products);
 app.use('/categories', categories);
 app.use('/subcategories', subcategories);
 
