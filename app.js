@@ -9,7 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 // var products = require('./routes/products');
 var categories = require('./routes/categories');
-
+var subcategories = require('./routes/subcategories');
 var app = express();
 
 // view engine setup
@@ -28,6 +28,7 @@ app.use('/', routes);
 app.use('/users', users);
 // app.use('/products', products);
 app.use('/categories', categories);
+app.use('/subcategories', subcategories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
